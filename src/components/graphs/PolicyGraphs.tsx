@@ -184,7 +184,7 @@ export const AvgMarriageAgeGraph = () => {
           tickCount={10}
         />
         <YAxis
-          domain={["dataMin", "dataMax"]}
+          domain={[20, 35]}
           tickFormatter={(value) => `${value.toFixed(1)}`}
           tickCount={10}
         />
