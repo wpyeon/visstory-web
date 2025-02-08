@@ -99,7 +99,7 @@ export const KoreaFertilityRateGraph2007 = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/src/assets/korea-fertility-rate.csv");
+      const response = await fetch("/visstory-web/korea-fertility-rate.csv");
       const csvText = await response.text();
 
       const rows = csvText.split("\n").slice(1); // Skip header row

@@ -1,4 +1,4 @@
-import { Label, AreaChart, Area, XAxis, YAxis, ReferenceLine } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, ReferenceLine } from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ export function ProgressChart({ progress }: ProgressChartProps) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/src/assets/korea-fertility-rate.csv");
+        const response = await fetch("/visstory-web/korea-fertility-rate.csv");
         const text = await response.text();
         const rows = text.trim().split("\n").slice(1);
         const parsedData = rows.map((row) => {

@@ -7,11 +7,8 @@ import { SamplePage3 } from "./SamplePage3";
 import { SamplePage4 } from "./SamplePage4";
 import { SamplePage5 } from "./SamplePage5";
 import { SamplePage6 } from "./SamplePage6";
-import { useNavigate } from "react-router-dom";
 
 export const PublicSentimentPage = () => {
-  const navigate = useNavigate();
-
   const data = [
     { id: 1, name: "Category A", value: 39.6 },
     { id: 2, name: "Category B", value: 32.3 },
@@ -35,7 +32,7 @@ export const PublicSentimentPage = () => {
   const handlePieClick = (entry: any, index: number) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);
     const angles = data.map((item) => (item.value / total) * 360);
-    const startAngles = angles.reduce((acc: number[], angle, i) => {
+    const startAngles = angles.reduce((acc: number[], _: number, i: number) => {
       acc[i] = i === 0 ? 0 : acc[i - 1] + angles[i - 1];
       return acc;
     }, new Array(angles.length));
