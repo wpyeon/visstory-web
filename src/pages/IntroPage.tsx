@@ -1,7 +1,6 @@
 import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { ProgressChart } from "@/components/ProgressChart";
 import { IntroYearSection } from "@/pages/IntroYearSection";
-import { Link } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
