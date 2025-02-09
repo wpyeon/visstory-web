@@ -70,7 +70,7 @@ export function ProgressChart({ progress }: ProgressChartProps) {
         config={{
           line: {
             label: "Progress",
-            color: "hsl(var(--chart-1))",
+            color: "#646CFF",
           },
         }}
         className="h-[full] w-full"
@@ -80,12 +80,12 @@ export function ProgressChart({ progress }: ProgressChartProps) {
             <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor="hsl(var(--chart-1))"
+                stopColor="#646CFF"
                 stopOpacity={0.8}
               />
               <stop
                 offset="95%"
-                stopColor="hsl(var(--chart-1))"
+                stopColor="#646CFF"
                 stopOpacity={0}
               />
             </linearGradient>
