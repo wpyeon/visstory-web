@@ -122,7 +122,7 @@ export const PublicSentimentPage = () => {
             >
               <MdArrowBack className="text-3xl text-gray-400" />
             </div>
-            <div className="px-12 py-4">
+            <div className="px-12 pb-6 -mt-4">
               {selectedId === 1 && <HousingSupportPage />}
               {selectedId === 2 && <JobSupportPage />}
               {selectedId === 3 && <WorkLifeBalancePage />}
