@@ -6,6 +6,7 @@ import {
   AvgMarriageAgeGraph,
   KoreaFertilityRateGraph2007,
 } from "@/components/graphs/PolicyGraphs";
+import { Heading1, Heading2, Paragraph } from "@/components/ui/typography";
 
 function NavButton({ title, onClick }: { title: string; onClick: () => void }) {
   return (
@@ -17,18 +18,6 @@ function NavButton({ title, onClick }: { title: string; onClick: () => void }) {
     </button>
   );
 }
-
-const Heading1 = ({ children }: { children: React.ReactNode }) => {
-  return <div className="text-2xl font-bold pb-6">{children}</div>;
-};
-
-const Heading2 = ({ children }: { children: React.ReactNode }) => {
-  return <div className="text-xl font-bold pb-6">{children}</div>;
-};
-
-const Paragraph = ({ children }: { children: React.ReactNode }) => {
-  return <div className="text-lg pb-6">{children}</div>;
-};
 
 const List = ({ children }: { children: React.ReactNode }) => {
   return (

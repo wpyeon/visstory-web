@@ -16,7 +16,7 @@ export const SubPageLayout = () => {
       >
         <MdArrowBack className="text-3xl text-gray-400" />
       </div>
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col flex-1 min-h-0">
         <Outlet />
       </div>
     </div>

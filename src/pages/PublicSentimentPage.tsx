@@ -1,33 +1,39 @@
 import { useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { MdArrowBack } from "react-icons/md";
-import { SamplePage1 } from "./SamplePage1";
-import { SamplePage2 } from "./SamplePage2";
-import { SamplePage3 } from "./SamplePage3";
-import { SamplePage4 } from "./SamplePage4";
-import { SamplePage5 } from "./SamplePage5";
-import { SamplePage6 } from "./SamplePage6";
+import {
+  HousingSupportPage,
+  JobSupportPage,
+  WorkLifeBalancePage,
+  ChildcareSupportPage,
+  MitigationOfCompetitiveEducationPage,
+  FinancialSupportPage,
+  MedicalSupportPage,
+} from "./SentimentSubpages";
 
 export const PublicSentimentPage = () => {
   const data = [
-    { id: 1, name: "Category A", value: 39.6 },
-    { id: 2, name: "Category B", value: 32.3 },
-    { id: 3, name: "Category C", value: 30.3 },
-    { id: 4, name: "Category D", value: 28.6 },
-    { id: 5, name: "Category D", value: 24.1 },
-    { id: 6, name: "Category D", value: 22.0 },
+    { id: 1, name: "Housing Support", value: 33.4 },
+    { id: 2, name: "Job Support", value: 20.8 },
+    { id: 3, name: "Work-life Balance", value: 14.0 },
+    { id: 4, name: "Childcare Support", value: 11.5 },
+    { id: 5, name: "Mitigation of Competitive Education", value: 9.1 },
+    { id: 6, name: "Financial Support", value: 8.0 },
+    { id: 7, name: "Medical Support", value: 3.1 },
   ];
 
   const COLORS = [
-    "#e64747",
-    "#e35d5d",
-    "#e37676",
-    "#e38f8f",
-    "#e6a8a8",
-    "#e6bebe",
+    "#646CFF",
+    "#8086ff",
+    "#9197ff",
+    "#a8adff",
+    "#bfc2ff",
+    "#d4d6ff",
+    "#e0e2ff",
   ];
   const [startAngle, setStartAngle] = useState(90);
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [showLabel, setShowLabel] = useState(true);
 
   const handlePieClick = (entry: any, index: number) => {
     const total = data.reduce((sum, item) => sum + item.value, 0);
@@ -39,7 +45,7 @@ export const PublicSentimentPage = () => {
 
     const centerAngle = startAngles[index] + angles[index] / 2;
     setSelectedId(entry.id);
-
+    setShowLabel(false);
     // Set rotation to make the center of the clicked section point right (90 degrees)
     setStartAngle(90 - centerAngle);
   };
@@ -47,6 +53,9 @@ export const PublicSentimentPage = () => {
   function handleSectionBack() {
     setSelectedId(null);
     setStartAngle(90);
+    setTimeout(() => {
+      setShowLabel(true);
+    }, 500);
   }
 
   return (
@@ -83,8 +92,8 @@ export const PublicSentimentPage = () => {
               dataKey="value"
               nameKey="name"
               label={({ name, value }) => {
-                if (selectedId) return null;
-                return `${name}: ${value}%`;
+                if (showLabel) return `${name}: ${value}%`;
+                return null;
               }}
               onClick={(_, index) => handlePieClick(data[index], index)}
               isAnimationActive={true}
@@ -102,23 +111,26 @@ export const PublicSentimentPage = () => {
       </div>
       <div
         className={`absolute top-0 left-0 w-[70dvw] h-full transition-all duration-500 p-4 ${
-          selectedId ? "translate-x-[30dvw]" : "translate-x-[99dvw]"
+          selectedId ? "translate-x-[30dvw]" : "translate-x-[100dvw]"
         }`}
       >
         <div className="relative w-full h-full rounded-2xl border-2 border-gray-300 overflow-y-hidden">
-          <div className="overflow-y-auto h-dvh">
+          <div className="overflow-y-auto h-full">
             <div
               className="sticky top-0 left-0 w-12 h-12 flex items-center justify-center"
               onClick={handleSectionBack}
             >
               <MdArrowBack className="text-3xl text-gray-400" />
             </div>
-            {selectedId === 1 && <SamplePage1 />}
-            {selectedId === 2 && <SamplePage2 />}
-            {selectedId === 3 && <SamplePage3 />}
-            {selectedId === 4 && <SamplePage4 />}
-            {selectedId === 5 && <SamplePage5 />}
-            {selectedId === 6 && <SamplePage6 />}
+            <div className="px-12 py-4">
+              {selectedId === 1 && <HousingSupportPage />}
+              {selectedId === 2 && <JobSupportPage />}
+              {selectedId === 3 && <WorkLifeBalancePage />}
+              {selectedId === 4 && <ChildcareSupportPage />}
+              {selectedId === 5 && <MitigationOfCompetitiveEducationPage />}
+              {selectedId === 6 && <FinancialSupportPage />}
+              {selectedId === 7 && <MedicalSupportPage />}
+            </div>
           </div>
         </div>
       </div>

@@ -2,14 +2,29 @@ import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { ProgressChart } from "@/components/ProgressChart";
 import { IntroYearSection } from "@/pages/IntroYearSection";
 import { Link } from "react-router-dom";
+import { MdArrowBack } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export function IntroPage() {
   const progress = useScrollProgress();
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   return (
-    <div className="w-full h-fit top-0 left-0">
-      <div className="sticky top-0 left-0 w-full h-[38vh] z-10 bg-gradient-to-t from-transparent from-0% via-background/90 via-5% to-background to-10%">
-        <ProgressChart progress={progress} />
+    <div className="w-full h-fit">
+      <div className="sticky top-0 left-0 w-full flex flex-col h-[38vh] z-10 bg-gradient-to-t from-transparent from-0% via-background/90 via-5% to-background to-10%">
+        <div
+          className="w-12 min-h-12 flex items-center justify-center z-20"
+          onClick={handleBack}
+        >
+          <MdArrowBack className="text-3xl text-gray-400" />
+        </div>
+        <div className="flex-1">
+          <ProgressChart progress={progress} />
+        </div>
       </div>
       <div className="h-fit">
         <IntroYearSection title="1970's">
@@ -90,14 +105,6 @@ export function IntroPage() {
             </p>
           </div>
         </IntroYearSection>
-        <div className="flex pb-8 pr-8 justify-end">
-          <Link
-            to="/main"
-            className="h-16 w-56 bg-red-500 rounded-2xl flex items-center justify-center"
-          >
-            <p className="text-2xl font-bold text-white">What's next?</p>
-          </Link>
-        </div>
       </div>
     </div>
   );

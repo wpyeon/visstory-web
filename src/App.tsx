@@ -9,14 +9,14 @@ import { SubPageLayout } from "./layouts/sub-page";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/intro" />} />
-      <Route path="/intro" element={<IntroPage />} />
+      <Route path="/" element={<Navigate to="/main" />} />
       <Route path="/main" element={<MainPage />} />
       <Route element={<SubPageLayout />}>
         <Route path="/main/sentiment" element={<PublicSentimentPage />} />
         <Route path="/main/policies" element={<TabLayout />} />
         <Route path="/main/industries" element={<IndustriesPage />} />
       </Route>
+      <Route path="/main/history" element={<IntroPage />} />
     </Routes>
   );
 }

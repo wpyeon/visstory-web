@@ -57,7 +57,7 @@ interface ContentDisplayProps {
 
 function ContentDisplay({ screenId }: ContentDisplayProps) {
   return (
-    <div className="h-full flex flex-col items-center justify-center">
+    <div className="h-[200px] w-full flex flex-col">
       <h2 className="text-2xl font-bold mb-4">
         {screens.find((screen) => screen.id === screenId)?.title}
       </h2>
@@ -70,20 +70,19 @@ export function IndustriesPage() {
   const [selectedScreenId, setSelectedScreenId] = useState(screens[0].id);
 
   return (
-    <div className="flex flex-col flex-1 h-full mx-4 mb-4 overflow-hidden gap-4">
-      <div className="text-3xl font-bold">
-        Affected Industries
-      </div>
-      <Card className="flex flex-col h-full">
-        <div className="flex h-full">
-          <div className="w-full md:w-1/3 p-4 bg-gray-100">
+    <div className="flex flex-1 flex-col h-full min-h-0">
+      <div className="text-3xl font-bold mx-4">Affected Industries</div>
+      <Card className="flex flex-1 m-4 min-h-0">
+        <div className="flex flex-1 flex-row h-full">
+          <div className="w-1/3 p-4 bg-gray-100">
             <ButtonGrid
               screens={screens}
               onSelectScreen={setSelectedScreenId}
             />
           </div>
-          <div className="w-full md:w-2/3 p-4 bg-white">
+          <div className="flex w-2/3 p-4 bg-white overflow-y-auto">
             <ContentDisplay screenId={selectedScreenId} />
+            {/* tTEst */}
           </div>
         </div>
       </Card>

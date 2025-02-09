@@ -1,4 +1,11 @@
-import { AreaChart, Area, XAxis, YAxis, ReferenceLine } from "recharts";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  ReferenceLine,
+  ResponsiveContainer,
+} from "recharts";
 import { ChartContainer } from "@/components/ui/chart";
 import { useEffect, useState } from "react";
 
@@ -44,7 +51,7 @@ export function ProgressChart({ progress }: ProgressChartProps) {
         }
         // Add the last point
         enhancedData.push(parsedData[parsedData.length - 1]);
-        setChartData(enhancedData); 
+        setChartData(enhancedData);
       } catch (error) {
         console.error("Error loading CSV:", error);
       }
@@ -58,70 +65,72 @@ export function ProgressChart({ progress }: ProgressChartProps) {
   const remainingData = chartData.slice(progressIndex - 1); // Overlap by 1 for smooth connection
 
   return (
-    <ChartContainer
-      config={{
-        line: {
-          label: "Progress",
-          color: "hsl(var(--chart-1))",
-        },
-      }}
-      className="h-full w-full"
-    >
-      <AreaChart data={chartData}>
-        <defs>
-          <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop
-              offset="5%"
-              stopColor="hsl(var(--chart-1))"
-              stopOpacity={0.8}
-            />
-            <stop
-              offset="95%"
-              stopColor="hsl(var(--chart-1))"
-              stopOpacity={0}
-            />
-          </linearGradient>
-        </defs>
-        <XAxis dataKey="year" hide />
-        <YAxis hide domain={["dataMin", "dataMax"]} />
-        <Area
-          type="monotone"
-          data={completedData}
-          dataKey="rate"
-          stroke="var(--color-line)"
-          fill="url(#gradient)"
-          strokeWidth={3}
-          dot={false}
-          isAnimationActive={false}
-          label="Progress"
-        />
-        <Area
-          type="monotone"
-          data={remainingData}
-          dataKey="rate"
-          stroke="var(--color-line)"
-          strokeWidth={2}
-          dot={false}
-          strokeOpacity={0}
-          fillOpacity={0}
-          isAnimationActive={false}
-        />
-        <ReferenceLine
-          y={completedData[completedData.length - 1]?.rate}
-          stroke="var(--color-line)"
-          strokeWidth={2}
-          strokeDasharray="5 5"
-          label={{
-            value: `${
-              completedData[completedData.length - 1]?.year
-            } - ${completedData[completedData.length - 1]?.rate.toFixed(2)}`,
-            position: "insideBottomRight",
-            fontSize: "20px",
-            fontWeight: "bold",
-            fill: "var(--color-line)",
-          }}
-        />
-      </AreaChart>
-    </ChartContainer>
+    <ResponsiveContainer width="100%" height="100%">
+      <ChartContainer
+        config={{
+          line: {
+            label: "Progress",
+            color: "hsl(var(--chart-1))",
+          },
+        }}
+        className="h-[full] w-full"
+      >
+        <AreaChart data={chartData}>
+          <defs>
+            <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop
+                offset="5%"
+                stopColor="hsl(var(--chart-1))"
+                stopOpacity={0.8}
+              />
+              <stop
+                offset="95%"
+                stopColor="hsl(var(--chart-1))"
+                stopOpacity={0}
+              />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="year" hide />
+          <YAxis hide domain={["dataMin", "dataMax"]} />
+          <Area
+            type="monotone"
+            data={completedData}
+            dataKey="rate"
+            stroke="var(--color-line)"
+            fill="url(#gradient)"
+            strokeWidth={3}
+            dot={false}
+            isAnimationActive={false}
+            label="Progress"
+          />
+          <Area
+            type="monotone"
+            data={remainingData}
+            dataKey="rate"
+            stroke="var(--color-line)"
+            strokeWidth={2}
+            dot={false}
+            strokeOpacity={0}
+            fillOpacity={0}
+            isAnimationActive={false}
+          />
+          <ReferenceLine
+            y={completedData[completedData.length - 1]?.rate}
+            stroke="var(--color-line)"
+            strokeWidth={2}
+            strokeDasharray="5 5"
+            label={{
+              value: `${
+                completedData[completedData.length - 1]?.year
+              } - ${completedData[completedData.length - 1]?.rate.toFixed(2)}`,
+              position: "insideBottomRight",
+              fontSize: "20px",
+              fontWeight: "bold",
+              fill: "var(--color-line)",
+            }}
+          />
+        </AreaChart>
+      </ChartContainer>
+    </ResponsiveContainer>
   );
 }
