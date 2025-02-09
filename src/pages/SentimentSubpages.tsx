@@ -1,15 +1,8 @@
-import { RealEstateRentalGraph } from "@/components/graphs/SentimentGraphs";
+import {
+  RealEstateRentalGraph,
+  WorkLifeBalanceGraph,
+} from "@/components/graphs/SentimentGraphs";
 import { Heading1, Heading2, Paragraph } from "@/components/ui/typography";
-import img11b from "@/assets/1-1-b.svg";
-import img12b from "@/assets/1-2-b.svg";
-import img13b from "@/assets/1-3-b.svg";
-import img14b from "@/assets/1-4-b.svg";
-import img15b from "@/assets/1-5-b.svg";
-import img11a from "@/assets/1-1-a.svg";
-import img12a from "@/assets/1-2-a.svg";
-import img13a from "@/assets/1-3-a.svg";
-import img14a from "@/assets/1-4-a.svg";
-import img15a from "@/assets/1-5-a.svg";
 
 interface GovernmentSupportCardProps {
   title: string;
@@ -33,31 +26,37 @@ const GovernmentSupportCard = ({
       </div>
       <div className="flex flex-col flex-1">
         <div className="flex flex-row gap-2 justify-content items-center">
-          <div className="flex flex-col gap-2 items-center">
+          <div className="flex flex-1 flex-col gap-2 items-center">
             <img
               src={beforeImage}
               alt="Government Support Before"
               className="h-20"
             />
-            <div className="flex flex-row w-full items-center justify-center gap-2">
-              <span className="px-2 text-xs font-bold bg-gray-500 text-white rounded-full w-fit">
+            <div className="items-center justify-center leading-[0]">
+              <span className="inline px-2 text-xs font-bold bg-gray-500 text-white rounded-full">
                 Before
               </span>
-              <span className="text-sm font-bold">{beforeValue}</span>
+              <span className="inline text-sm font-bold">
+                {"  "}
+                {beforeValue}
+              </span>
             </div>
           </div>
           <span className="text-xl font-bold">{"->"}</span>
-          <div className="flex flex-col gap-2 items-center">
+          <div className="flex flex-1 flex-col gap-2 items-center">
             <img
               src={afterImage}
               alt="Government Support After"
               className="h-20"
             />
-            <div className="flex flex-row w-full items-center justify-center gap-2">
-              <span className="px-2 text-xs font-bold bg-[#646cff] text-white rounded-full w-fit">
+            <div className="w-full items-center justify-center leading-[0]">
+              <span className="inline px-2 text-xs font-bold bg-[#646cff] text-white rounded-full">
                 After
               </span>
-              <span className="text-sm font-bold">{afterValue}</span>
+              <span className="inline text-sm font-bold">
+                {"  "}
+                {afterValue}
+              </span>
             </div>
           </div>
         </div>
@@ -84,6 +83,7 @@ export const HousingSupportPage = () => {
         demographic crisis.
       </Paragraph>
       <Heading2>Average Real Estate Rental Prices / Income Ratio</Heading2>
+      <RealEstateRentalGraph />
       <Paragraph>
         The Average Real Estate Rental Prices/Income Ratio in South Korea has
         shown an increasing trend, indicating that housing costs are rising
@@ -91,42 +91,41 @@ export const HousingSupportPage = () => {
         financial burden on households, as a larger portion of income is being
         allocated to rent.
       </Paragraph>
-      <RealEstateRentalGraph />
       <br />
       <Heading2>Government Support</Heading2>
       <div className="grid grid-cols-2 gap-4">
         <GovernmentSupportCard
           title="Housing Supply Increase for Families with Newborns"
-          beforeImage={img11b}
-          afterImage={img11a}
+          beforeImage="/visstory-web/pol-icons/1-1-b.svg"
+          afterImage="/visstory-web/pol-icons/1-1-a.svg"
           beforeValue="7K Houses"
           afterValue="12K Houses"
         />
         <GovernmentSupportCard
           title="Housing Supply Increase by Urbanizing Areas"
-          beforeImage={img12b}
-          afterImage={img12a}
+          beforeImage="/visstory-web/pol-icons/1-2-b.svg"
+          afterImage="/visstory-web/pol-icons/1-2-a.svg"
           beforeValue="None"
           afterValue="44K Houses"
         />
         <GovernmentSupportCard
           title="Increased Mortgage for Families with Newborns"
-          beforeImage={img13b}
-          afterImage={img13a}
+          beforeImage="/visstory-web/pol-icons/1-3-b.svg"
+          afterImage="/visstory-web/pol-icons/1-3-a.svg"
           beforeValue="200M KRW"
           afterValue="250M KRW"
         />
         <GovernmentSupportCard
           title="Allowance of One Additional Special Supply for Households with Newborns"
-          beforeImage={img14b}
-          afterImage={img14a}
+          beforeImage="/visstory-web/pol-icons/1-4-b.svg"
+          afterImage="/visstory-web/pol-icons/1-4-a.svg"
           beforeValue="None"
           afterValue="1 Additional Supply"
         />
         <GovernmentSupportCard
           title="Public Rental Renewal and Unit Size Upgrade Support for Households with Newborns"
-          beforeImage={img15b}
-          afterImage={img15a}
+          beforeImage="/visstory-web/pol-icons/1-5-b.svg"
+          afterImage="/visstory-web/pol-icons/1-5-a.svg"
           beforeValue="None"
           afterValue="1 Additional Renewal & Unit Size Upgrade"
         />
@@ -176,6 +175,49 @@ export const WorkLifeBalancePage = () => {
         work-life balance is widely viewed as a crucial step in encouraging
         young couples to have children and reversing the demographic decline.
       </Paragraph>
+      <Heading2>Work vs. Family - What's More Important?</Heading2>
+      <WorkLifeBalanceGraph />
+      <Paragraph>
+        In recent years, Koreans have increasingly prioritized work-life
+        balance, marking a notable shift in societal values. As the country
+        faces the pressures of long working hours and a highly competitive
+        corporate culture, many individuals are seeking ways to better balance
+        their professional and personal lives. This growing emphasis reflects a
+        broader desire for well-being and family time, highlighting the need for
+        systemic changes to support a healthier, more sustainable lifestyle amid
+        the nation’s demographic challenges.
+      </Paragraph>
+      <Heading2>Government Support Changes in 2025</Heading2>
+      <div className="grid grid-cols-2 gap-4">
+        <GovernmentSupportCard
+          title="Short-term Parental Leave"
+          beforeImage="/visstory-web/pol-icons/3-1-b.svg"
+          afterImage="/visstory-web/pol-icons/3-1-a.svg"
+          beforeValue="None"
+          afterValue="A Week of Leave per Year, Maximum 2 Weeks"
+        />
+        <GovernmentSupportCard
+          title="Family Care Leave, Spouse Leave"
+          beforeImage="/visstory-web/pol-icons/3-2-b.svg"
+          afterImage="/visstory-web/pol-icons/3-2-a.svg"
+          beforeValue="Per-day Usage"
+          afterValue="Per-hour Usage"
+        />
+        <GovernmentSupportCard
+          title="Improved Parental Leave Benefits"
+          beforeImage="/visstory-web/pol-icons/3-3-b.svg"
+          afterImage="/visstory-web/pol-icons/3-3-a.svg"
+          beforeValue="1.5M KRW/Month"
+          afterValue="~2.5M KRW/Month"
+        />
+        <GovernmentSupportCard
+          title="Division-of-Labor Support Fund for Colleagues"
+          beforeImage="/visstory-web/pol-icons/3-4-b.svg"
+          afterImage="/visstory-web/pol-icons/3-4-a.svg"
+          beforeValue="None"
+          afterValue="200K KRW/Month"
+        />
+      </div>
     </div>
   );
 };
@@ -198,6 +240,37 @@ export const ChildcareSupportPage = () => {
         ease parental burdens and encourage higher birth rates in the face of
         the country's demographic crisis.
       </Paragraph>
+      <Heading2>Government Support Changes in 2025</Heading2>
+      <div className="grid grid-cols-2 gap-4">
+        <GovernmentSupportCard
+          title="Adjusted Kindergarden Operation Hours"
+          beforeImage="/visstory-web/pol-icons/4-1-b.svg"
+          afterImage="/visstory-web/pol-icons/4-1-a.svg"
+          beforeValue="Depends on Localities"
+          afterValue="Operational 12 Hours a Day"
+        />
+        <GovernmentSupportCard
+          title="Eased Government Subsidized Childcare Eligibility"
+          beforeImage="/visstory-web/pol-icons/4-2-b.svg"
+          afterImage="/visstory-web/pol-icons/4-2-a.svg"
+          beforeValue="Household Below 150% of the Median Income"
+          afterValue="Household Below 200% of the Median Income"
+        />
+        <GovernmentSupportCard
+          title="Expanded Licensed Caretaker Support"
+          beforeImage="/visstory-web/pol-icons/4-3-b.svg"
+          afterImage="/visstory-web/pol-icons/4-3-a.svg"
+          beforeValue="86K Households"
+          afterValue="Targeting 300K Households"
+        />
+        <GovernmentSupportCard
+          title="Expanded Foreign Domestic Helpers Support"
+          beforeImage="/visstory-web/pol-icons/4-4-b.svg"
+          afterImage="/visstory-web/pol-icons/4-4-a.svg"
+          beforeValue="Experimental Support of 100 Households"
+          afterValue="Targeting 1200 Households"
+        />
+      </div>
     </div>
   );
 };
