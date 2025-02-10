@@ -1,15 +1,11 @@
 export interface IntroYearSectionProps {
-  title: string;
   children?: React.ReactNode;
 }
 
-export function IntroYearSection({ title, children }: IntroYearSectionProps) {
+export function IntroYearSection({ children }: IntroYearSectionProps) {
   return (
     <div className="h-[100vh] w-full space-y-8">
-      <div className="sticky top-[38vh]">
-        <h1 className="text-7xl font-bold">{title}</h1>
-        {children}
-      </div>
+      <div className="sticky top-[38vh]">{children}</div>
     </div>
   );
 }

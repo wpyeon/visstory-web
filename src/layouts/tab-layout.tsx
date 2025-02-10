@@ -4,7 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   AgingVelocityOfCountriesGraph,
   AvgMarriageAgeGraph,
+  ElderlyDependencyRatioGraph,
   KoreaFertilityRateGraph2007,
+  WorldElderlyRatioGraph,
 } from "@/components/graphs/PolicyGraphs";
 import { Heading1, Heading2, Paragraph } from "@/components/ui/typography";
 
@@ -37,8 +39,15 @@ export default function TabLayout() {
 
   return (
     <div className="flex flex-col flex-1 w-full px-4 pb-4 gap-4">
-      <div className="text-3xl font-bold flex items-center justify-center pb-6 pt-4">
-        Phase 1-4 Low Birth Rate Policies Plan Key Information
+      <div className="flex flex-col items-center justify-center gap-2">
+        <div className="text-3xl font-bold flex items-center justify-center  pt-4">
+          Phase 1-4 Low Birth Rate Policies Plan Key Information
+        </div>
+        <Paragraph>
+          Click on the tabs to change between the different phases. Click on the
+          navigation buttons on the right to navigate to the different sections
+          of the phase.
+        </Paragraph>
       </div>
       <div className="w-full">
         <Tabs
@@ -169,20 +178,73 @@ export default function TabLayout() {
                         </List>
                         <AvgMarriageAgeGraph />
                         <Heading2>Work-Life Balance Challenges</Heading2>
-                        <Heading2>Rising Child-Rearing Costs</Heading2>
-                        <Heading2>Changing Social Values</Heading2>
-                        <Heading2>
-                          Policy Directions for Addressing Low Birth Rate
-                        </Heading2>
+                        <List>
+                          <li>
+                            Women's workforce participation is increasing, but
+                            returning to work after childbirth remains
+                            difficult.
+                          </li>
+                          <li>
+                            Parental leave and reduced working-hour policies
+                            exist, but utilization rates are low, and workplace
+                            culture does not support parental leave.
+                          </li>
+                        </List>
                       </div>
                       <div ref={(el) => (sectionRefs.current["section4"] = el)}>
-                        <Heading1>Policy Direction</Heading1>
-                        <Paragraph>
-                          The government focused on{" "}
-                          <b>lowering the age of marriage</b> and{" "}
-                          <b>increasing the number of children</b> to address
-                          the low birth rate.
-                        </Paragraph>
+                        <Heading1>
+                          Policy Direction for Addressing Low Birth Rate
+                        </Heading1>
+                        <Heading2>
+                          Strengthening Support for Childbirth and Parenting
+                        </Heading2>
+                        <List>
+                          <li>
+                            Housing Support: Enhanced housing assistance for
+                            newlyweds.
+                          </li>
+                          <li>
+                            Childcare Subsidies: Increased funding for childcare
+                            and reduced education costs.
+                          </li>
+                          <li>
+                            Childcare Infrastructure: More public childcare
+                            facilities and diverse parenting services.
+                          </li>
+                          <li>
+                            Maternal Support: Improved prenatal care in
+                            underprivileged areas and government vaccination
+                            programs.
+                          </li>
+                        </List>
+                        <Heading2>Promoting Work-Life Balance</Heading2>
+                        <List>
+                          <li>
+                            Parental Leave: Expanded paternity leave and
+                            flexible work hours.
+                          </li>
+                          <li>
+                            Family-Friendly Workplaces: Certification for
+                            family-oriented companies.
+                          </li>
+                          <li>
+                            Support for Women: Reduced working hours for parents
+                            and job support for mothers returning to work.
+                          </li>
+                        </List>
+                        <Heading2>
+                          Creating a Family-Friendly Social Environment
+                        </Heading2>
+                        <List>
+                          <li>
+                            Gender Equality: Promote male involvement in
+                            childcare and shared household duties.
+                          </li>
+                          <li>
+                            Family Values Education: Foster a cultural
+                            appreciation for childbirth and parenting.
+                          </li>
+                        </List>
                       </div>
                     </div>
                   </CardContent>
@@ -191,21 +253,130 @@ export default function TabLayout() {
               <TabsContent key={1} value={"second"}>
                 <Card>
                   <CardHeader>
-                    <CardTitle>First Phase</CardTitle>
+                    <CardTitle>
+                      <Heading1>Phase 2 Policies Plan (2011~2015)</Heading1>
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-col">
+                      <Paragraph>
+                        South Korea is experiencing an unprecedentedly rapid
+                        transition into a low birth rate and aging society,
+                        necessitating urgent{" "}
+                        <b>economic and social responses</b>.
+                      </Paragraph>
                       <div ref={(el) => (sectionRefs.current["section1"] = el)}>
-                        <h2>Section 1</h2>
-                        Content for section 1
+                        <Heading1>Background of the Second Phase</Heading1>
+                        <List>
+                          <li>
+                            By 2050, the elderly population is projected to
+                            account for 38.2% of the total population,
+                            significantly exceeding the average of advanced
+                            European and North American countries (25.9%).
+                          </li>
+                          <li>
+                            These demographic shifts are expected to lead to
+                            labor shortages, economic stagnation, increased
+                            financial burdens, and intergenerational conflicts.
+                          </li>
+                          <li>
+                            In response, the government enacted the Low Birth
+                            Rate and Aging Society Basic Act (2005) and
+                            established the Presidential Committee on Low Birth
+                            Rate and Aging Society to implement comprehensive
+                            policies.
+                          </li>
+                        </List>
                       </div>
                       <div ref={(el) => (sectionRefs.current["section2"] = el)}>
-                        <h2>Section 2</h2>
-                        Content for section 2
+                        <Heading1>
+                          Current Status of Low Birth Rate and Aging Society
+                        </Heading1>
+                        <Heading2>Worsening Low Birth Rate</Heading2>
+                        <List>
+                          <li>
+                            While the First Basic Plan slowed the sharp decline
+                            in birth rates, the overall decrease in births and
+                            low fertility rate persisted.
+                          </li>
+                          <li>
+                            The total fertility rate in 2009 was 1.15, the
+                            lowest among OECD countries.
+                          </li>
+                        </List>
+                        <Heading2>Accelerating Aging Population</Heading2>
+                        <List>
+                          <li>
+                            Due to rising life expectancy, the proportion of the
+                            elderly population (65 years and older) is steadily
+                            increasing.
+                          </li>
+                          <li>
+                            The elderly population ratio, which was 11.0% in
+                            2010, is expected to reach 38.2% by 2050, making
+                            South Korea one of the world's most aged societies.
+                          </li>
+                        </List>
+                        <WorldElderlyRatioGraph />
+                        <Heading2>
+                          Social Impacts of Demographic Changes
+                        </Heading2>
+                        <List>
+                          <li>
+                            Elderly dependency ratio (the number of elderly per
+                            100 working-age individuals) is projected to
+                            increase significantly, from 37.2% in 2010 to 72% in
+                            2050, adding financial strain on pensions and health
+                            insurance systems.
+                          </li>
+                          <li>
+                            Rising financial burdens on welfare systems could
+                            exacerbate intergenerational conflicts.
+                          </li>
+                        </List>
+                        <ElderlyDependencyRatioGraph />
                       </div>
                       <div ref={(el) => (sectionRefs.current["section3"] = el)}>
-                        <h2>Section 3</h2>
-                        Content for section 3
+                        <Heading1>Causes of Low Birth Rate</Heading1>
+                        <Heading2>
+                          Rising Childcare and Education Costs
+                        </Heading2>
+                        <List>
+                          <li>
+                            High costs of private education and childcare
+                            discourage childbirth.
+                          </li>
+                          <li>
+                            Public childcare facilities are expanding but fail
+                            to meet qualitative expectations.
+                          </li>
+                          <li>
+                            The rise in dual-income households has increased
+                            demand for extended childcare services and
+                            customized parental support, which remains
+                            insufficient.
+                          </li>
+                        </List>
+                        <Heading2>Changing Social Values</Heading2>
+                        <List>
+                          <li>
+                            Evolving societal perceptions of marriage and
+                            childbirth have led to an increase in the unmarried
+                            population.
+                          </li>
+                          <li>
+                            Greater individualism and a stronger emphasis on
+                            self-fulfillment reduce motivation for having
+                            children.
+                          </li>
+                        </List>
+                      </div>
+                      <div ref={(el) => (sectionRefs.current["section4"] = el)}>
+                        <Heading1>Causes of Low Birth Rate</Heading1>
+                        <Heading2>
+                          Rising Childcare and Education Costs
+                        </Heading2>
+                        <Heading2>Changing Social Values</Heading2>
                       </div>
                     </div>
                   </CardContent>
