@@ -1,6 +1,8 @@
 import {
   RealEstateRentalGraph,
   WorkLifeBalanceGraph,
+  EducationSpendingGraph,
+  ChildCareUsageGraph,
 } from "@/components/graphs/SentimentGraphs";
 import { Heading1, Heading2, Paragraph } from "@/components/ui/typography";
 
@@ -24,7 +26,7 @@ const GovernmentSupportCard = ({
       <div className="flex flex-col w-full">
         <p className="font-bold">{title}</p>
       </div>
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col justify-center flex-1">
         <div className="flex flex-row gap-2 justify-content items-center">
           <div className="flex flex-1 flex-col gap-2 items-center">
             <img
@@ -91,8 +93,17 @@ export const HousingSupportPage = () => {
         financial burden on households, as a larger portion of income is being
         allocated to rent.
       </Paragraph>
-      <br />
-      <Heading2>Government Support</Heading2>
+      <Heading2>Government Support as of 2025</Heading2>
+      <Paragraph>
+        Recent reforms in South Korea's housing policy include a substantial
+        increase in housing supply, expanded mortgage limits, and enhanced
+        rental support specifically targeted at families with newborns. These
+        measures aim to alleviate the housing affordability crisis, which has
+        been a major barrier for young couples considering starting a family.
+        Housing problem has always been a critical issue for fertility rate of
+        South Korea, and the government has been meticulously refining its
+        policies to address this issue.
+      </Paragraph>
       <div className="grid grid-cols-2 gap-4">
         <GovernmentSupportCard
           title="Housing Supply Increase for Families with Newborns"
@@ -187,7 +198,17 @@ export const WorkLifeBalancePage = () => {
         systemic changes to support a healthier, more sustainable lifestyle amid
         the nation’s demographic challenges.
       </Paragraph>
-      <Heading2>Government Support Changes in 2025</Heading2>
+      <Heading2>Government Support Changes as of 2025</Heading2>
+      <Paragraph>
+        The South Korean government has introduced new policies to its parental
+        and family care leave policies to better support working parents. These
+        reforms include the introduction of short-term parental leave, more
+        flexible family care leave options, and increased parental leave
+        benefits to ease the financial burden on families. Additionally, new
+        initiatives like the Division-of-Labor Support Fund aim to encourage
+        workplace collaboration, creating a more supportive environment for
+        parents balancing work and family life.
+      </Paragraph>
       <div className="grid grid-cols-2 gap-4">
         <GovernmentSupportCard
           title="Short-term Parental Leave"
@@ -240,7 +261,23 @@ export const ChildcareSupportPage = () => {
         ease parental burdens and encourage higher birth rates in the face of
         the country's demographic crisis.
       </Paragraph>
-      <Heading2>Government Support Changes in 2025</Heading2>
+      <Heading2>Childcare Service Usage of Working Couples</Heading2>
+      <ChildCareUsageGraph />
+      <Paragraph>
+        The percentage of working couples using childcare services has been
+        steadily increasing, indicating that more parents are seeking external
+        childcare support for their children. This trend reflects the growing
+        demand for childcare services and the increasing need for affordable and
+        accessible childcare options. Yet, the number of childcare service
+        centers has not been able to keep up with the growing demand.
+      </Paragraph>
+      <Heading2>Government Support Changes as of 2025</Heading2>
+      <Paragraph>
+        The recent trend in South Korea's childcare policy is to increase the
+        capabilities by increasing accessibility via service points. Many
+        couples feel that accessability of childcare is a pain point for them,
+        and the government developed policies to ease this burden.
+      </Paragraph>
       <div className="grid grid-cols-2 gap-4">
         <GovernmentSupportCard
           title="Adjusted Kindergarden Operation Hours"
@@ -293,6 +330,35 @@ export const MitigationOfCompetitiveEducationPage = () => {
         competitive education is seen as essential to creating a more supportive
         environment for raising children and reversing the declining birth rate.
       </Paragraph>
+      <Heading2>Average Spending on Private Education per Month</Heading2>
+      <EducationSpendingGraph />
+      <Heading2>Government Support Changes as of 2025</Heading2>
+      <Paragraph>
+        The South Korean government has taken significant steps to improve
+        public education in order to mitigate overheated private education. New
+        initiatives like government-operated after-school English learning
+        programs aim to provide children with better access to quality education
+        and reduce reliance on expensive private tutoring. These efforts reflect
+        a commitment to creating a more equitable and supportive educational
+        environment for families, addressing one of the key concerns
+        contributing to the nation’s low birth rate.
+      </Paragraph>
+      <div className="grid grid-cols-2 gap-4">
+        <GovernmentSupportCard
+          title="Development of Better Public Education"
+          beforeImage="/visstory-web/pol-icons/5-1-b.svg"
+          afterImage="/visstory-web/pol-icons/5-1-a.svg"
+          beforeValue="None"
+          afterValue="Operation of 12 Education Development Zones"
+        />
+        <GovernmentSupportCard
+          title="Government Operated English Learning Programmes for Children"
+          beforeImage="/visstory-web/pol-icons/5-2-b.svg"
+          afterImage="/visstory-web/pol-icons/5-2-a.svg"
+          beforeValue="None"
+          afterValue="After-school English Learning Programmes"
+        />
+      </div>
     </div>
   );
 };
@@ -315,6 +381,41 @@ export const FinancialSupportPage = () => {
         support systems is widely viewed as a key strategy to address the
         nation's demographic crisis and ensure a sustainable future.
       </Paragraph>
+      <Heading2>
+        Rethinking Support: Moving from Money to Practical Solutions
+      </Heading2>
+      <Paragraph>
+        The policy focus is shifting from direct cash cash incentives to
+        providing services that directly assist married couples with childcare.
+        This change reflects an understanding that while financial aid helps, it
+        does not fully address the practical challenges of raising children,
+        such as access to affordable childcare or balancing work and family
+        life. In this light, the financial support shows general trend of
+        providing tax credits and subsidies instead of cash allowances.
+      </Paragraph>
+      <div className="grid grid-cols-2 gap-4">
+        <GovernmentSupportCard
+          title="Cash Allowance for Families with Newborns of Age 0-2"
+          beforeImage="/visstory-web/pol-icons/6-1-b.svg"
+          afterImage="/visstory-web/pol-icons/6-1-a.svg"
+          beforeValue="700K KRW per month / 350K KRW per month"
+          afterValue="1M KRW per month / 500K KRW per month"
+        />
+        <GovernmentSupportCard
+          title="Child Tax Credit for Families with Children of Age 0-18"
+          beforeImage="/visstory-web/pol-icons/6-2-b.svg"
+          afterImage="/visstory-web/pol-icons/6-2-a.svg"
+          beforeValue="First Child: 150K Second Child: 200K Third Child: 300K (KRW per month)"
+          afterValue="First Child: 250K Second Child: 300K Third Child: 400K (KRW per month)"
+        />
+        <GovernmentSupportCard
+          title="Three Years Tax Credit for Marrying Couples"
+          beforeImage="/visstory-web/pol-icons/6-3-b.svg"
+          afterImage="/visstory-web/pol-icons/6-3-a.svg"
+          beforeValue="None"
+          afterValue="500K KRW per Year per Person"
+        />
+      </div>
     </div>
   );
 };
@@ -338,6 +439,33 @@ export const MedicalSupportPage = () => {
         reducing barriers to parenthood and addressing the nation's demographic
         challenges.
       </Paragraph>
+      <Heading2>Government Support as of 2025</Heading2>
+      <Paragraph>
+        In recent years, South Korea has seen a steady increase in the average
+        age of marriage, driven by factors such as economic pressures, changing
+        social norms, and career priorities. This trend has led to a growing
+        demand for medical support related to fertility, pregnancy, and
+        age-related health concerns for older parents. To address these
+        challenges, the South Korean government has implemented policies,
+        including financial incentives, expanded healthcare services, and public
+        awareness campaigns, to support couples and encourage family planning.
+      </Paragraph>
+      <div className="grid grid-cols-2 gap-4">
+        <GovernmentSupportCard
+          title="Enhanced Fertility Testing Support"
+          beforeImage="/visstory-web/pol-icons/7-1-b.svg"
+          afterImage="/visstory-web/pol-icons/7-1-a.svg"
+          beforeValue="Once in a Lifetime for a Married Person"
+          afterValue="Trice in a Lifetime Regardless of Marital Status"
+        />
+        <GovernmentSupportCard
+          title="Financial Support for Fertility Preservation"
+          beforeImage="/visstory-web/pol-icons/7-2-b.svg"
+          afterImage="/visstory-web/pol-icons/7-2-a.svg"
+          beforeValue="None"
+          afterValue="Subsidy for Egg / Sperm Cell Freezing"
+        />
+      </div>
     </div>
   );
 };

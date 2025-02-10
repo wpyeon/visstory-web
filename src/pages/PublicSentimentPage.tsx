@@ -10,6 +10,7 @@ import {
   FinancialSupportPage,
   MedicalSupportPage,
 } from "./SentimentSubpages";
+import { Paragraph } from "@/components/ui/typography";
 
 export const PublicSentimentPage = () => {
   const data = [
@@ -46,7 +47,6 @@ export const PublicSentimentPage = () => {
     const centerAngle = startAngles[index] + angles[index] / 2;
     setSelectedId(entry.id);
     setShowLabel(false);
-    // Set rotation to make the center of the clicked section point right (90 degrees)
     setStartAngle(90 - centerAngle);
   };
 
@@ -65,9 +65,15 @@ export const PublicSentimentPage = () => {
           selectedId ? "translate-x-[-100%]" : "translate-x-[0%]"
         }`}
       >
-        <h1 className="text-3xl font-bold">
-          Public Sentiment: What People Think They Need the Most
-        </h1>
+        <div className="flex flex-col items-center justify-center gap-2">
+          <h1 className="text-3xl font-bold">
+            Public Sentiment: What People Think They Need the Most
+          </h1>
+          <Paragraph>
+            Click on the pie chart to see the stories and policies related to
+            the selected section.
+          </Paragraph>
+        </div>
       </div>
       <div
         className={`absolute w-[800px] h-[400px] top-[50%] translate-y-[-50%] left-[50%] transition-all duration-500 ${
@@ -95,6 +101,7 @@ export const PublicSentimentPage = () => {
                 if (showLabel) return `${name}: ${value}%`;
                 return null;
               }}
+              fontWeight={"bold"}
               onClick={(_, index) => handlePieClick(data[index], index)}
               isAnimationActive={true}
               animationBegin={0}

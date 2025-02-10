@@ -8,7 +8,7 @@ export const MainPage = () => {
       <img
         src={emptyPlayground}
         alt="Image of empty playground"
-        className="w-dvw h-dvh absolute"
+        className="w-dvw h-dvh absolute object-cover"
       />
       <div className="flex flex-1 justify-center items-center w-full h-full p-8 z-10">
         <div className="flex flex-col justify-center items-center w-full h-full rounded-xl bg-black/0">

@@ -104,7 +104,7 @@ export default function TabLayout() {
                           Even if the birth rate recovers, there will be a
                           significant time lag before the working-age population
                           increases, necessitating long-term preparations. To
-                          address these challenges, the government enacted the
+                          address these challenges, the government enacted the{" "}
                           <b>Low Birth Rate and Aging Society Basic Act</b> in
                           2005 and established the{" "}
                           <b>
