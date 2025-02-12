@@ -123,14 +123,14 @@ export const PublicSentimentPage = () => {
         }`}
       >
         <div className="relative w-full h-full rounded-2xl border-2 border-gray-300 overflow-y-hidden">
-          <div className="overflow-y-auto h-full">
+          <div className="overflow-y-auto h-full bg-white">
             <div
               className="sticky top-0 left-0 w-12 h-12 flex items-center justify-center"
               onClick={handleSectionBack}
             >
               <MdArrowBack className="text-3xl text-gray-400" />
             </div>
-            <div className="px-12 pb-6 -mt-4 bg-white">
+            <div className="px-12 pb-6 -mt-4">
               {selectedId === 1 && <HousingSupportPage />}
               {selectedId === 2 && <JobSupportPage />}
               {selectedId === 3 && <WorkLifeBalancePage />}
