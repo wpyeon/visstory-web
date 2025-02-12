@@ -12,26 +12,27 @@ import {
 } from "./SentimentSubpages";
 import { Paragraph } from "@/components/ui/typography";
 
-export const PublicSentimentPage = () => {
-  const data = [
-    { id: 1, name: "Housing Support", value: 33.4 },
-    { id: 2, name: "Job Support", value: 20.8 },
-    { id: 3, name: "Work-life Balance", value: 14.0 },
-    { id: 4, name: "Childcare Support", value: 11.5 },
-    { id: 5, name: "Mitigation of Competitive Education", value: 9.1 },
-    { id: 6, name: "Financial Support", value: 8.0 },
-    { id: 7, name: "Medical Support", value: 3.1 },
-  ];
+const data = [
+  { id: 1, name: "Housing Support", value: 33.4 },
+  { id: 2, name: "Job Support", value: 20.8 },
+  { id: 3, name: "Work-life Balance", value: 14.0 },
+  { id: 4, name: "Childcare Support", value: 11.5 },
+  { id: 5, name: "Mitigation of Competitive Education", value: 9.1 },
+  { id: 6, name: "Financial Support", value: 8.0 },
+  { id: 7, name: "Medical Support", value: 3.1 },
+];
 
-  const COLORS = [
-    "#646CFF",
-    "#8086ff",
-    "#9197ff",
-    "#a8adff",
-    "#bfc2ff",
-    "#d4d6ff",
-    "#e0e2ff",
-  ];
+const COLORS = [
+  "#646CFF",
+  "#8086ff",
+  "#9197ff",
+  "#a8adff",
+  "#bfc2ff",
+  "#d4d6ff",
+  "#e0e2ff",
+];
+
+export const PublicSentimentPage = () => {
   const [startAngle, setStartAngle] = useState(90);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [showLabel, setShowLabel] = useState(true);
@@ -87,13 +88,13 @@ export const PublicSentimentPage = () => {
           width={"100%"}
           height={"100%"}
           className={"transition-all duration-500"}
-          style={{ transform: `rotate(${90 - startAngle}deg) scale(1.5)` }}
+          style={{ transform: `rotate(${90 - startAngle}deg)` }}
         >
           <PieChart>
             <Pie
               data={data}
-              innerRadius={50}
-              outerRadius={150}
+              innerRadius={"20%"}
+              outerRadius={"70%"}
               labelLine={false}
               fill="#8884d8"
               dataKey="value"
@@ -103,6 +104,7 @@ export const PublicSentimentPage = () => {
                 return null;
               }}
               fontWeight={"bold"}
+              fontSize={26}
               onClick={(_, index) => handlePieClick(data[index], index)}
               isAnimationActive={true}
               animationBegin={0}
