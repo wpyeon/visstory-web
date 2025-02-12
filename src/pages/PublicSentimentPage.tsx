@@ -59,9 +59,9 @@ export const PublicSentimentPage = () => {
   }
 
   return (
-    <div className="relative top-0 left-0 h-full w-full overflow-hidden">
+    <div className="relative flex flex-col h-full w-full overflow-hidden">
       <div
-        className={`w-full h-[10dvh] flex items-center justify-center z-10 transition-all duration-500 ${
+        className={`w-full flex items-center justify-center z-10 transition-all duration-500 ${
           selectedId ? "translate-x-[-100%]" : "translate-x-[0%]"
         }`}
       >
@@ -76,15 +76,16 @@ export const PublicSentimentPage = () => {
         </div>
       </div>
       <div
-        className={`absolute w-[800px] h-[400px] top-[50%] translate-y-[-50%] left-[50%] transition-all duration-500 ${
+        className={`relative flex-1 flex-col items-center justify-center transition-all duration-500 ${
           selectedId
-            ? "-translate-x-[calc(50dvw+50%)] scale-150"
-            : "translate-x-[-50%]"
-        }`}
+            ? "-translate-x-[50%] scale-150"
+            : ""
+        }`
+      }
       >
         <ResponsiveContainer
-          width={800}
-          height={400}
+          width={"100%"}
+          height={"100%"}
           className={"transition-all duration-500"}
           style={{ transform: `rotate(${90 - startAngle}deg) scale(1.5)` }}
         >
@@ -129,7 +130,7 @@ export const PublicSentimentPage = () => {
             >
               <MdArrowBack className="text-3xl text-gray-400" />
             </div>
-            <div className="px-12 pb-6 -mt-4">
+            <div className="px-12 pb-6 -mt-4 bg-white">
               {selectedId === 1 && <HousingSupportPage />}
               {selectedId === 2 && <JobSupportPage />}
               {selectedId === 3 && <WorkLifeBalancePage />}
