@@ -4,5 +4,5 @@ This is an interative webpage showcasing data related to South Korean government
 
 ## Credit
 
-- Jonghoon Kim: Project Lead, Design
-- Woojang Pyeon: Website Design and Development
+- **Jonghoon Kim** - Project Lead, Design
+- **Woojang Pyeon** - Website Design and Development
