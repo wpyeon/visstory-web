@@ -61,23 +61,23 @@ export function IntroPage() {
           <div className="mx-20 mb-4">
             <Banner title="1980's - Era of Democratization" />
             <p className="text-xl pb-2">
-              In 1996, South Korea joined the Organization for Economic
-              Co-operation and Development (OECD), marking its integration into
-              the global economy. However, the late 1990s brought the Asian
-              Financial Crisis, which forced significant economic restructuring
-              and led to widespread unemployment and social challenges. During
-              this period, societal attitudes began to shift, with greater
-              acceptance of diverse lifestyles and a growing emphasis on career
-              advancement over traditional family roles. Culturally, the Korean
-              Wave (Hallyu) emerged, as Korean pop culture, including music and
-              television dramas, gained international popularity. The Total
-              Fertility Rate (TFR) continued to decline during this decade,
-              heavily influenced by the financial insecurity following the 1997
-              crisis. Many young couples postponed or reduced the number of
-              children due to economic uncertainty and job instability. The
-              pressures of globalization further reinforced a focus on
-              competitiveness and career development, making it increasingly
-              difficult for individuals to balance work and family life.
+              In the 1980s, South Korea experienced robust economic growth,
+              solidifying its position as a global player in industries like
+              semiconductors, automobiles, and consumer electronics. This era
+              was also marked by a powerful pro-democracy movement, culminating
+              in the June Democratic Uprising of 1987, which paved the way for
+              significant political reforms and a transition toward democratic
+              governance. Culturally, the decade saw a flourishing of arts and
+              culture, with greater freedom of expression leading to the rise of
+              Korean cinema, music, and literature, both domestically and
+              internationally. As democratization and economic progress
+              continued, the Total Fertility Rate (TFR) dropped below 2 by the
+              late 1980s, driven by rapid urbanization and increasing levels of
+              education and workforce participation among women. Many women
+              began delaying marriage and childbirth to pursue educational and
+              career opportunities, resulting in smaller families. These social
+              shifts, combined with political reforms, created a stable
+              environment for further economic and societal transformation.
             </p>
           </div>
         </IntroYearSection>
