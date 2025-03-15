@@ -80,7 +80,7 @@ export function IndustriesPage() {
               onSelectScreen={setSelectedScreenId}
             />
           </div>
-          <div className="flex w-2/3 p-4 bg-white overflow-y-auto">
+          <div className="flex w-2/3 p-4 overflow-y-auto">
             <ContentDisplay screenId={selectedScreenId} />
             {/* tTEst */}
           </div>

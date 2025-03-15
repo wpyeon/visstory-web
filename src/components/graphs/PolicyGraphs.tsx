@@ -92,8 +92,9 @@ export const AgingVelocityOfCountriesGraph = () => {
           ))}
         </LineChart>
       </ResponsiveContainer>
-      <p className="text-md text-gray-500 italic">
-        Graph 1: Aging Velocity of Countries
+      <p className="text-sm text-gray-500 italic">
+        Graph 1: Aging Velocity of Countries. Retrieved from Statistics Korea,
+        "Projection of Future Population" (통계청, "미래인구특별추계"), 2005
       </p>
     </div>
   );
@@ -167,8 +168,9 @@ export const KoreaFertilityRateGraph2007 = () => {
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="text-md text-gray-500 italic">
-        Graph 2: Fertility Rate in South Korea Over Time
+      <p className="text-sm text-gray-500 italic">
+        Graph 2: Fertility Rate in South Korea Over Time. Retrieved from
+        Organisation for Economic Co-operation and Development, 2024
       </p>
     </div>
   );
@@ -219,8 +221,10 @@ export const AvgMarriageAgeGraph = () => {
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="text-md text-gray-500 italic">
-        Graph 3: Average Marriage Age in South Korea Over Time
+      <p className="text-sm text-gray-500 italic">
+        Graph 3: Average Marriage Age in South Korea Over Time Retrieved from
+        KOSIS, "Trends in Changes in the Age of First Marriage" (통계청,
+        "초혼연령변동추이"), 2007
       </p>
     </div>
   );
@@ -238,16 +242,38 @@ export function WorldElderlyRatioGraph() {
       <ResponsiveContainer width="100%" height={400}>
         <BarChart width={500} height={300} data={worldElderlyRatioData}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" type="category" domain={[2005, 2050]}/>
-          <YAxis domain={[0, 40]} tickFormatter={(value) => `${value.toFixed(1)}%`} tickCount={10} />
+          <XAxis dataKey="year" type="category" domain={[2005, 2050]} />
+          <YAxis
+            domain={[0, 40]}
+            tickFormatter={(value) => `${value.toFixed(1)}%`}
+            tickCount={10}
+          />
           <Tooltip />
           <Legend />
-          <Bar dataKey="world" name="World" fill="#0052ff" label={{position: "top", fill: "#0052ff"}} />
-          <Bar dataKey="developed" name="Developed Countries" fill="#bf1077" label={{position: "top", fill: "#bf1077"}} />
-          <Bar dataKey="korea" name="Korea" fill="#ff8150" label={{position: "top", fill: "#ff8150"}} />
+          <Bar
+            dataKey="world"
+            name="World"
+            fill="#0052ff"
+            label={{ position: "top", fill: "#0052ff" }}
+          />
+          <Bar
+            dataKey="developed"
+            name="Developed Countries"
+            fill="#bf1077"
+            label={{ position: "top", fill: "#bf1077" }}
+          />
+          <Bar
+            dataKey="korea"
+            name="Korea"
+            fill="#ff8150"
+            label={{ position: "top", fill: "#ff8150" }}
+          />
         </BarChart>
       </ResponsiveContainer>
-      <p className="text-md text-gray-500 italic">Graph 6: World Elderly Ratio Over Time</p>
+      <p className="text-md text-gray-500 italic">
+        Graph 4: World Elderly Ratio Over Time. Retrieved from United Nation,
+        "World Population Prospects", 2006
+      </p>
     </div>
   );
 }
@@ -310,12 +336,13 @@ export function ElderlyDependencyRatioGraph() {
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="text-md text-gray-500 italic">
-        Graph 5: Elderly Dependency Ratio in South Korea Over Time
+      <p className="text-sm text-gray-500 italic">
+        Graph 5: Elderly Dependency Ratio in South Korea Over Time. Retrieved from
+        
       </p>
-      <p className="text-md text-gray-500 italic">
+      <p className="text-sm text-gray-500 italic">
         {
-          "(Elderly Dependency = Number of People of Age >= 65 / Number of People of Age < 64 and Age >= 15"
+          "Note. Elderly Dependency = Number of People of Age >= 65 / Number of People of Age < 64 and Age >= 15"
         }
       </p>
     </div>

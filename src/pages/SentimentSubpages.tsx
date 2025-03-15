@@ -22,7 +22,7 @@ const GovernmentSupportCard = ({
   afterValue,
 }: GovernmentSupportCardProps) => {
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-100 rounded-xl p-4 gap-2">
+    <div className="flex flex-col items-center justify-center bg-[#ffffff] rounded-xl p-4 gap-2">
       <div className="flex flex-col w-full">
         <p className="font-bold">{title}</p>
       </div>
@@ -52,7 +52,7 @@ const GovernmentSupportCard = ({
               className="h-20"
             />
             <div className="w-full items-center justify-center leading-[0]">
-              <span className="inline px-2 text-xs font-bold bg-[#646cff] text-white rounded-full">
+              <span className="inline px-2 text-xs font-bold bg-[#aac7d8] text-white rounded-full">
                 After
               </span>
               <span className="inline text-sm font-bold">

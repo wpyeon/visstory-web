@@ -13,11 +13,11 @@ export const MainPage = () => {
       <div className="flex flex-1 justify-center items-center w-full h-full p-8 z-10">
         <div className="flex flex-col justify-center items-center w-full h-full rounded-xl bg-black/0">
           <div className="flex flex-col items-center w-full h-full flex-1 gap-10">
-            <h1 className="text-2xl font-bold text-black text-7xl mt-10 mr-10">
+            <h1 className="text-2xl font-bold  text-7xl mt-10 mr-10">
               South Korea's Untold Stories
             </h1>
             <div className="flex flex-col items-center w-full h-full gap-10">
-              <p className="text-xl text-black bg-gray-200/80 w-4/5 rounded-xl p-6 shadow-xl">
+              <div className="text-xl  bg-[#E1EAF6]/80 w-4/5 rounded-xl p-6 shadow-xl">
                 South Korea's fertility rate has reached an all-time low,
                 prompting the government to implement various measures to
                 address this pressing issue. As members of society, it is
@@ -30,7 +30,7 @@ export const MainPage = () => {
                 <br />
                 <br />
                 <b>Click the button below to start your journey.</b>
-              </p>
+              </div>
             </div>
           </div>
           <div className="flex flex-1 flex-col items-center">
@@ -41,10 +41,10 @@ export const MainPage = () => {
                     variant="outline"
                     className="flex flex-col justify-start w-72 h-12 shadow-xl hover:h-72 transition-all duration-300 overflow-y-hidden"
                   >
-                    <div className="text-xl font-bold text-black max-h-12 pb-4">
+                    <div className="text-xl font-bold  max-h-12 pb-4">
                       History
                     </div>
-                    <div className="flex flex-col flex-1 text-lg text-black max-w-72 text-wrap text-left">
+                    <div className="flex flex-col flex-1 text-lg  max-w-72 text-wrap text-left">
                       Scroll down through the modern history of South Korea and
                       see how the fertility rate has changed over time.
                     </div>
@@ -57,13 +57,14 @@ export const MainPage = () => {
                     variant="outline"
                     className="flex flex-col justify-start w-72 h-12 shadow-xl hover:h-72 transition-all duration-300 overflow-y-hidden"
                   >
-                    <div className="text-xl font-bold text-black max-h-12 pb-4">
+                    <div className="text-xl font-bold  max-h-12 pb-4">
                       Policies & Politics
                     </div>
-                    <div className="flex flex-col flex-1 text-lg text-black max-w-72 text-wrap text-left">
+                    <div className="flex flex-col flex-1 text-lg  max-w-72 text-wrap text-left">
                       Explore the four phases of South Korea's policy
-                      development plan, where the government implemented adequate
-                      strategies to address the issue of fertility rate.
+                      development plan, where the government implemented
+                      adequate strategies to address the issue of fertility
+                      rate.
                     </div>
                   </Button>
                 </Link>
@@ -74,10 +75,10 @@ export const MainPage = () => {
                     variant="outline"
                     className="flex flex-col justify-start w-72 h-12 shadow-xl hover:h-72 transition-all duration-300 overflow-y-hidden"
                   >
-                    <div className="text-xl font-bold text-black max-h-12 pb-4">
+                    <div className="text-xl font-bold  max-h-12 pb-4">
                       Public Sentiment
                     </div>
-                    <div className="flex flex-col flex-1 text-lg text-black max-w-72 text-wrap text-left">
+                    <div className="flex flex-col flex-1 text-lg  max-w-72 text-wrap text-left">
                       Learn about the public sentiment towards the issue of
                       fertility rate in South Korea, and see how it has shaped
                       the policies.

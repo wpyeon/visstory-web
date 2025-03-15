@@ -23,13 +23,13 @@ const data = [
 ];
 
 const COLORS = [
-  "#646CFF",
-  "#8086ff",
-  "#9197ff",
-  "#a8adff",
-  "#bfc2ff",
-  "#d4d6ff",
-  "#e0e2ff",
+  "#44576d",
+  "#51647a",
+  "#65798f",
+  "#7c90a6",
+  "#91a5ba",
+  "#9db0c4",
+  "#b0c1d4",
 ];
 
 export const PublicSentimentPage = () => {
@@ -96,6 +96,7 @@ export const PublicSentimentPage = () => {
               innerRadius={"20%"}
               outerRadius={"70%"}
               labelLine={false}
+              stroke="none"
               fill="#8884d8"
               dataKey="value"
               nameKey="name"
@@ -124,8 +125,8 @@ export const PublicSentimentPage = () => {
           selectedId ? "translate-x-[30dvw]" : "translate-x-[100dvw]"
         }`}
       >
-        <div className="relative w-full h-full rounded-2xl border-2 border-gray-300 overflow-y-hidden">
-          <div className="overflow-y-auto h-full bg-white">
+        <div className="relative w-full h-full rounded-2xl shadow-xl overflow-y-hidden">
+          <div className="overflow-y-auto h-full bg-accent">
             <div
               className="sticky top-0 left-0 w-12 h-12 flex items-center justify-center"
               onClick={handleSectionBack}

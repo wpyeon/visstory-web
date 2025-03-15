@@ -22,7 +22,7 @@ export const PyramidChart = () => {
         config={{
           bar: {
             label: "Progress",
-            color: "hsl(var(--chart-1))",
+            color: "#49566B",
           },
         }}
         className="h-[40vh] w-[40vh]"
@@ -42,14 +42,14 @@ export const PyramidChart = () => {
           />
           <YAxis dataKey="value" type="category" />
           <Tooltip formatter={(value) => Math.abs(Number(value))} />
-          <Bar dataKey="count" fill="red" />
+          <Bar dataKey="count" fill="#49566B" />
         </BarChart>
       </ChartContainer>
       <ChartContainer
         config={{
           bar: {
             label: "Progress",
-            color: "hsl(var(--chart-1))",
+            color: "#49566B",
           },
         }}
         className="h-[40vh] w-[40vh]"
@@ -65,7 +65,7 @@ export const PyramidChart = () => {
           <XAxis type="number" domain={[0, 20]}/> {/* For the count/frequency */}
           <YAxis dataKey="value" type="category" hide={true} /> {/* For the value ranges */}
           <Tooltip />
-          <Bar dataKey="count" fill="var(--chart-1)" />
+          <Bar dataKey="count" fill="#49566B" />
         </BarChart>
       </ChartContainer>
     </div>

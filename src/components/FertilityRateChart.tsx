@@ -21,7 +21,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    color: "#49566B",
   },
 } satisfies ChartConfig;
 

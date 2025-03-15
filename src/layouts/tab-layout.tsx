@@ -14,7 +14,7 @@ function NavButton({ title, onClick }: { title: string; onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="text-left hover:text-primary transition-colors"
+      className="text-left hover:text-primary transition-colors shadow-md"
     >
       {title}
     </button>
@@ -73,7 +73,7 @@ export default function TabLayout() {
           <div className="flex">
             <div className="flex-grow">
               <TabsContent key={0} value={"first"}>
-                <Card>
+                <Card className="bg-accent">
                   <CardHeader>
                     <CardTitle>
                       <Heading1>Phase 1 Policies Plan (2006~2010)</Heading1>
@@ -251,7 +251,7 @@ export default function TabLayout() {
                 </Card>
               </TabsContent>
               <TabsContent key={1} value={"second"}>
-                <Card>
+                <Card className="bg-accent">
                   <CardHeader>
                     <CardTitle>
                       <Heading1>Phase 2 Policies Plan (2011~2015)</Heading1>
@@ -435,7 +435,7 @@ export default function TabLayout() {
                 </Card>
               </TabsContent>
               <TabsContent key={2} value={"third"}>
-                <Card>
+                <Card className="bg-accent">
                   <CardHeader>
                     <CardTitle>
                       <Heading1>Phase 3 Policies Plan (2016~2020)</Heading1>
@@ -745,7 +745,7 @@ export default function TabLayout() {
                 </Card>
               </TabsContent>
               <TabsContent key={3} value={"fourth"}>
-                <Card>
+                <Card className="bg-accent">
                   <CardHeader>
                     <CardTitle>
                       <Heading1>Phase 4 Policies Plan (2021~2025)</Heading1>
@@ -1006,7 +1006,7 @@ export default function TabLayout() {
             </div>
 
             <nav className="sticky top-0 h-fit min-w-64 pl-4 pt-56">
-              <Card>
+              <Card className="bg-accent">
                 <CardHeader>
                   <CardTitle>
                     {activeTab === "first" && "First Phase"}

@@ -70,7 +70,7 @@ export function ProgressChart({ progress }: ProgressChartProps) {
         config={{
           line: {
             label: "Progress",
-            color: "#646CFF",
+            color: "#49566B",
           },
         }}
         className="h-[full] w-full"
@@ -80,12 +80,12 @@ export function ProgressChart({ progress }: ProgressChartProps) {
             <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor="#646CFF"
+                stopColor="#49566B"
                 stopOpacity={0.8}
               />
               <stop
                 offset="95%"
-                stopColor="#646CFF"
+                stopColor="#49566B"
                 stopOpacity={0}
               />
             </linearGradient>

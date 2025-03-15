@@ -29,6 +29,9 @@ export function IntroPage() {
         >
           <MdArrowBack className="text-3xl text-gray-400" />
         </div>
+        <div className="flex justify-end text-sm text-gray-400">
+          Data Source: Organisation for Economic Co-operation and Development, 2024
+        </div>
         <div className="flex-1">
           <ProgressChart progress={progress} />
         </div>
