@@ -270,7 +270,7 @@ export function WorldElderlyRatioGraph() {
           />
         </BarChart>
       </ResponsiveContainer>
-      <p className="text-md text-gray-500 italic">
+      <p className="text-sm text-gray-500 italic">
         Graph 4: World Elderly Ratio Over Time. Retrieved from United Nation,
         "World Population Prospects", 2006
       </p>
@@ -337,14 +337,166 @@ export function ElderlyDependencyRatioGraph() {
         </LineChart>
       </ResponsiveContainer>
       <p className="text-sm text-gray-500 italic">
-        Graph 5: Elderly Dependency Ratio in South Korea Over Time. Retrieved from
-        
-      </p>
-      <p className="text-sm text-gray-500 italic">
+        Graph 5: Elderly Dependency Ratio in South Korea Over Time. Retrieved
+        from KOSIS, "Key National Population Indicators" (KOSIS, "전국 주요
+        인구지표"), 2022.{" "}
         {
-          "Note. Elderly Dependency = Number of People of Age >= 65 / Number of People of Age < 64 and Age >= 15"
+          "Note: Elderly Dependency = Number of People of Age >= 65 / Number of People of Age < 64 and Age >= 15"
         }
       </p>
     </div>
   );
 }
+
+const ageGroupData = [
+  { year: 2020, age_0_14: 12.11, age_15_64: 72.06, age_65_plus: 15.83 },
+  { year: 2021, age_0_14: 11.8, age_15_64: 71.54, age_65_plus: 16.66 },
+  { year: 2022, age_0_14: 11.41, age_15_64: 71.1, age_65_plus: 17.49 },
+  { year: 2023, age_0_14: 10.97, age_15_64: 70.69, age_65_plus: 18.34 },
+];
+
+export function AgeGroupGraph() {
+  return (
+    <div className="flex flex-col justify-center items-center p-6">
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart width={500} height={300} data={ageGroupData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="year" type="category" domain={[2020, 2023]} />
+          <YAxis
+            domain={[0, 100]}
+            tickFormatter={(value) => `${value.toFixed(1)}%`}
+            tickCount={10}
+          />
+          <Tooltip />
+          <Legend />
+          <Bar
+            dataKey="age_0_14"
+            name="Age 0-14"
+            fill="#768a96"
+            stackId="a"
+          />
+          <Bar
+            dataKey="age_15_64"
+            name="Age 15-64"
+            fill="#aac7d8"
+            stackId="a"
+          />
+          <Bar
+            dataKey="age_65_plus"
+            name="Age 65+"
+            fill="#44576d"
+            stackId="a"
+          />
+        </BarChart>
+      </ResponsiveContainer>
+      <p className="text-sm text-gray-500 italic">
+        Graph 6: Population by Age Group in South Korea. Retrieved from
+        Statistica, "Demographics of South Korea", 2024
+      </p>
+    </div>
+  );
+}
+
+export function KoreaFertilityRateLineChart() {
+  const [chartData, setChartData] = useState<
+    Array<{ year: string; rate: number }>
+  >([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/visstory-web/korea-fertility-rate.csv");
+        const text = await response.text();
+        const rows = text.trim().split("\n").slice(1);
+        const parsedData = rows
+          .map((row) => {
+            const [date, value] = row.split(",");
+            return {
+              year: date.split("-")[0],
+              rate: parseFloat(value),
+            };
+          })
+          // Filter data to only include years up to 2020
+          .filter(item => parseInt(item.year) <= 2019);
+        
+        setChartData(parsedData);
+      } catch (error) {
+        console.error("Error loading CSV:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div className="flex flex-col justify-center items-center p-6">
+      <div className="flex w-full justify-between mt-2 px-10">
+        <div className="flex-1 text-center">
+          <p className="text-sm font-medium">Population Replacement Level</p>
+          <p className="text-xs text-gray-500">Before 1983</p>
+        </div>
+        <div className="flex-1 text-center">
+          <p className="text-sm font-medium">Low-Fertility Country</p>
+          <p className="text-xs text-gray-500">1983-2002</p>
+        </div>
+        <div className="flex-1 text-center">
+          <p className="text-sm font-medium">Ultra-Low-Fertility Country</p>
+          <p className="text-xs text-gray-500">After 2002</p>
+        </div>
+      </div>
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart 
+          width={500} 
+          height={300} 
+          data={chartData}
+          margin={{ top: 20, right: 30, left: 20, bottom: 20}}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis 
+            dataKey="year" 
+            type="category"
+            tickCount={10}
+            domain={['dataMin', '2019']} // Ensure x-axis only goes up to 2020
+          />
+          <YAxis
+            domain={[0, "auto"]}
+            tickFormatter={(value) => `${value.toFixed(1)}`}
+          />
+          <Tooltip 
+            formatter={(value) => [`${value}`, "Fertility Rate"]}
+            labelFormatter={(label) => `Year: ${label}`}
+          />
+          <Legend />
+          {/* Vertical reference lines for section boundaries */}
+          <ReferenceLine
+            x="1983"
+            stroke="#333"
+            strokeWidth={1}
+            strokeDasharray="3 3"
+          />
+          <ReferenceLine
+            x="2002"
+            stroke="#333"
+            strokeWidth={1}
+            strokeDasharray="3 3"
+          />
+          
+          <Line
+            type="monotone"
+            dataKey="rate"
+            name="Fertility Rate"
+            stroke="#49566B"
+            strokeWidth={2}
+            dot={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+
+      <p className="text-sm text-gray-500 italic mt-4">
+        Graph 7: South Korea Fertility Rate Trend with Demographic Transition Phases. 
+        Retrieved from Statistics Korea, "provisional birth and death statistics" (통계청, "출생사망통계 잠정결과"), 2020
+      </p>
+    </div>
+  );
+}
+
